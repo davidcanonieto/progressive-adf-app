@@ -1,17 +1,18 @@
 <button
     *ngIf="appName"
     mat-raised-button
-    routerLink="/apps/{{appName}}/start-task"
+    routerLink="/apps/{{appName}}/start-process"
     color="primary">
-    Start new task
+    Start new process
 </button>
 
-<adf-cloud-task-list
-    #taskListCloud
+<adf-cloud-process-list
+  #processListCloud
     [appName]="appName"
+    [status]="'RUNNING'"
     (rowClick)="onRowClick($event)">
-</adf-cloud-task-list>
+</adf-cloud-process-list>
 <adf-pagination
-    [target]="taskListCloud"
+    [target]="processListCloud"
     [supportedPageSizes]="supportedSizes">
 </adf-pagination>

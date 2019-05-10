@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProcessDetailsComponent } from '../process-details/process-details.component';
 import { MatDialog } from '@angular/material';
-import { TaskDetailsComponent } from '../task-details/task-details.component';
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  selector: 'app-processes',
+  templateUrl: './processes.component.html',
+  styleUrls: ['./processes.component.scss']
 })
-export class TasksComponent implements OnInit {
+export class ProcessesComponent implements OnInit {
 
   appName: string = null;
-  taskId: string;
+  processId: string = null;
   supportedSizes = [5, 10, 15, 20];
 
   constructor(private route: ActivatedRoute,
@@ -26,17 +26,17 @@ export class TasksComponent implements OnInit {
     });
   }
 
-  onRowClick(taskId: string) {
-    if (taskId) {
-      this.taskId = taskId;
+  onRowClick(processId: string) {
+    if (processId) {
+      this.processId = processId;
       this.openDialog();
     }
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(TaskDetailsComponent, {
+    const dialogRef = this.dialog.open(ProcessDetailsComponent, {
       width: '600px',
-      data: {appName: this.appName, taskId: this.taskId}
+      data: {appName: this.appName, processId: this.processId}
     });
 
     dialogRef.afterClosed().subscribe(result => {

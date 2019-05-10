@@ -1,0 +1,14 @@
+.adf-go-to-apps-button {
+  text-decoration: none;
+  color: black;
+
+  span {
+    margin-left: 40px;
+  }
+
+  mat-icon {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -2px;
+  }
+}

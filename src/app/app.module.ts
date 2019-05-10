@@ -27,6 +27,12 @@ import { PreviewService } from './services/preview.service';
 
 import { appRoutes } from './app.routes';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { WorkStationComponent } from './work-station/work-station.component';
+import { ProcessesComponent } from './processes/processes.component';
+import { StartTaskComponent } from './start-task/start-task.component';
+import { ProcessDetailsComponent } from './process-details/process-details.component';
 
 @NgModule({
     imports: [
@@ -44,7 +50,8 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
         TranslateModule.forRoot({
             loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
         }),
-        StencilsModule
+        StencilsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     declarations: [
         AppComponent,
@@ -54,9 +61,17 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
         TasksComponent,
         TaskDetailsComponent,
         StartProcessComponent,
+        StartTaskComponent,
         AppLayoutComponent,
         BlobViewComponent,
-        FileViewComponent
+        FileViewComponent,
+        WorkStationComponent,
+        ProcessesComponent,
+        ProcessDetailsComponent
+    ],
+    entryComponents: [
+      ProcessDetailsComponent,
+      TaskDetailsComponent
     ],
     providers: [
         PreviewService,
