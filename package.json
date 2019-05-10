@@ -55,7 +55,9 @@
     "rxjs": "^6.2.2",
     "systemjs": "0.19.27",
     "web-animations-js": "2.3.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "webpack-dev-server": ">=3.1.11",
+    "tar": ">=4.4.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
