@@ -27,6 +27,8 @@ import { StartProcessComponent } from './start-process/start-process.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { FileViewComponent } from './file-view/file-view.component';
 import { BlobViewComponent } from './file-view/blob-view.component';
+import { WorkStationComponent } from './work-station/work-station.component';
+import { StartTaskComponent } from './start-task/start-task.component';
 
 export const appRoutes: Routes = [
   { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
@@ -49,6 +51,11 @@ export const appRoutes: Routes = [
         canActivate: [AuthGuardBpm]
       },
       {
+        path: 'apps/:appName/work-station',
+        component: WorkStationComponent,
+        canActivate: [AuthGuardBpm]
+      },
+      {
         path: 'apps/:appName/tasks',
         component: TasksComponent,
         canActivate: [AuthGuardBpm]
@@ -56,6 +63,21 @@ export const appRoutes: Routes = [
       {
         path: 'apps/:appName/tasks/:taskId',
         component: TaskDetailsComponent,
+        canActivate: [AuthGuardBpm]
+      },
+      {
+        path: 'apps/:appName/start-task',
+        component: StartTaskComponent,
+        canActivate: [AuthGuardBpm]
+      },
+      {
+        path: 'apps/:appName/processes',
+        component: TasksComponent,
+        canActivate: [AuthGuardBpm]
+      },
+      {
+        path: 'apps/:appName/processes/:processId',
+        component: StartProcessComponent,
         canActivate: [AuthGuardBpm]
       },
       {

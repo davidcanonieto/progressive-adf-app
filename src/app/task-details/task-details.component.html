@@ -1,5 +1,11 @@
-<h3>Task details</h3>
+<h3 mat-dialog-title>Task details</h3>
 
 <adf-cloud-task-header
-    [taskId]="taskId">
+    [appName]="data.appName"
+    [taskId]="data.taskId">
 </adf-cloud-task-header>
+
+
+<div class="adf-dialog-buttons">
+  <button mat-raised-button (click)="closeDialog()">Close</button>
+</div>

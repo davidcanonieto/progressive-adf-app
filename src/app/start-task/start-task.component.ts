@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-start-process',
-  templateUrl: './start-process.component.html',
-  styleUrls: ['./start-process.component.scss']
+  selector: 'app-start-task',
+  templateUrl: './start-task.component.html',
+  styleUrls: ['./start-task.component.scss']
 })
-export class StartProcessComponent implements OnInit {
+export class StartTaskComponent implements OnInit {
 
   appName: string = null;
 
@@ -24,11 +23,12 @@ export class StartProcessComponent implements OnInit {
     });
   }
 
-  onProcessStarted(process: any) {
+  onTaskStarted(task: any) {
     this.router.navigate(['/apps', this.appName, 'work-station']);
   }
 
-  onCancelStartProcess() {
+  onCancelStartTask() {
     this.router.navigate(['/apps', this.appName, 'work-station']);
   }
+
 }

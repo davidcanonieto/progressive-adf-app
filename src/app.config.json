@@ -1,15 +1,15 @@
 {
     "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
     "ecmHost": "{protocol}//{hostname}{:port}",
-    "bpmHost": "{protocol}//{hostname}{:port}",
-    "identityHost": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
+    "bpmHost": "http://aps2staging.envalfresco.com",
+    "identityHost": "http://aps2staging.envalfresco.com/auth/admin/realms/alfresco",
     "providers": "BPM",
     "application": {
         "name": "Alfresco ADF Application"
     },
     "authType": "OAUTH",
     "oauth2": {
-        "host": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
+        "host": "http://aps2staging.envalfresco.com/auth/realms/alfresco",
         "clientId": "activiti",
         "scope": "openid",
         "secret": "",
@@ -101,5 +101,36 @@
             "properties" : [ "description", "assignee", "status", "priority", "created"]
         }
     },
-    "alfresco-deployed-apps": []
+    "alfresco-deployed-apps": [],
+    "adf-cloud-process-list": {
+      "presets": {
+          "default": [
+              {
+                  "key": "entry.id",
+                  "type": "text",
+                  "title": "Id",
+                  "sortable": true
+              },
+              {
+                  "key": "entry.name",
+                  "type": "text",
+                  "title": "Name",
+                  "sortable": true
+              },
+              {
+                  "key": "entry.status",
+                  "type": "text",
+                  "title": "Status",
+                  "sortable": true
+              },
+              {
+                  "key": "entry.startDate",
+                  "type": "date",
+                  "title": "Start date",
+                  "sortable": true,
+                  "format": "timeAgo"
+              }
+          ]
+      }
+    }
 }
