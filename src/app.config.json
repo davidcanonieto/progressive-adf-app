@@ -1,15 +1,15 @@
 {
     "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
     "ecmHost": "{protocol}//{hostname}{:port}",
-    "bpmHost": "http://aps2staging.envalfresco.com",
-    "identityHost": "http://aps2staging.envalfresco.com/auth/admin/realms/alfresco",
+    "bpmHost": "http://localhost:8080",
+    "identityHost": "http://localhost:8080/auth/admin/realms/alfresco",
     "providers": "BPM",
     "application": {
         "name": "Alfresco ADF Application"
     },
     "authType": "OAUTH",
     "oauth2": {
-        "host": "http://aps2staging.envalfresco.com/auth/realms/alfresco",
+        "host": "http://localhost:8080/auth/realms/alfresco",
         "clientId": "activiti",
         "scope": "openid",
         "secret": "",
