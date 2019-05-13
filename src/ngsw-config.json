@@ -9,6 +9,7 @@
           "/favicon.ico",
           "/index.html",
           "/*.css",
+          "/*.scss",
           "/*.js"
         ]
       }
@@ -21,6 +22,28 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["https://aps2staging.envalfresco.com/**"],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "1m",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "thumbs",
+      "urls": ["https://aps2staging.envalfresco.com/**"],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "1m",
+        "strategy": "performance"
       }
     }
   ]

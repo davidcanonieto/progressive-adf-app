@@ -6,13 +6,14 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run validate-config && ng serve --open",
+    "start": "ng serve --open",
     "build": "ng build",
     "build:dist": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "validate-config": "ajv validate -s node_modules/@alfresco/adf-core/app.config.schema.json -d ./src/app.config.json --errors=text --verbose",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pwa": "ng build --prod && sw-precache --root=dist --config=precache-config.js"
   },
   "private": true,
   "dependencies": {
@@ -76,8 +77,9 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "^5.4.0",
     "node-sass": "^4.11.0",
+    "protractor": "^5.4.0",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "ts-node": "~4.1.0",
     "tslib": "^1.9.0",
     "tslint": "5.9.1",
